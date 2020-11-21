@@ -227,7 +227,11 @@
             <h1 style="display: none">AP java - De Morgan&#39;s Laws</h1>
             
             <div class="markdown-body">
-              <p>The famous De Morgan’s laws was developed by Augustus De Morgan in the 1800s, he was a indian born mathmatician and logician. And heres how the law applies in ap java</p>
+              <blockquote>
+<p>The famous De Morgan’s laws was developed by Augustus De Morgan in the 1800s, he was a indian born mathmatician and logician. And heres how the law applies in java</p>
+</blockquote>
+<a id="more"></a>
+
 <h1 id="De-Morgan’s-Laws"><a href="#De-Morgan’s-Laws" class="headerlink" title="De Morgan’s Laws"></a>De Morgan’s Laws</h1><h3 id="Distrubuting-the-NOT-operator"><a href="#Distrubuting-the-NOT-operator" class="headerlink" title="Distrubuting the ! (NOT) operator"></a>Distrubuting the <code>!</code> (NOT) operator</h3><p>TL;DR</p>
 <pre><code class="hljs asciidoc">&amp;&amp; becomes ||
 || becomes &amp;&amp;
@@ -238,16 +242,19 @@
 <span class="hljs-section">== becomes !=</span>
 != becomes ==</code></pre>
 
-<h5 id="AND-amp-OR-operators"><a href="#AND-amp-OR-operators" class="headerlink" title="AND &amp; OR operators"></a>AND &amp; OR operators</h5><p>Here’s an example:</p>
+<h5 id="AND-amp-OR-operators"><a href="#AND-amp-OR-operators" class="headerlink" title="AND &amp; OR operators"></a>AND &amp; OR operators</h5><hr>
+<p>Here’s an example:</p>
 <pre><code class="hljs gcode">!<span class="hljs-comment">(A &amp;&amp; B)</span></code></pre>
 <p>According to De Morgan’s law, it’s the same as the following.</p>
 <pre><code class="hljs erlang-repl">!A || !B</code></pre>
 <p>Remember that you’ll have to change it from OR to AND to make this true</p>
-<h5 id="Bigger-than-amp-smaller-than"><a href="#Bigger-than-amp-smaller-than" class="headerlink" title="Bigger than &amp; smaller than"></a>Bigger than &amp; smaller than</h5><pre><code class="hljs gcode">!<span class="hljs-comment">(A &gt; B)</span></code></pre>
+<h5 id="Bigger-than-amp-smaller-than"><a href="#Bigger-than-amp-smaller-than" class="headerlink" title="Bigger than &amp; smaller than"></a>Bigger than &amp; smaller than</h5><hr>
+<pre><code class="hljs gcode">!<span class="hljs-comment">(A &gt; B)</span></code></pre>
 <p>According to De Morgan’s law, it’s the same as the following.</p>
 <pre><code class="hljs dns"><span class="hljs-keyword">A</span> &lt;= B</code></pre>
 <p>Note that the <code>!</code> operator made the sign inclusive, since <code>&gt;</code> is exclusive.</p>
-<h5 id="Double-equals"><a href="#Double-equals" class="headerlink" title="Double equals"></a>Double equals</h5><pre><code class="hljs gcode">!<span class="hljs-comment">(A == B)</span></code></pre>
+<h5 id="Double-equals"><a href="#Double-equals" class="headerlink" title="Double equals"></a>Double equals</h5><hr>
+<pre><code class="hljs gcode">!<span class="hljs-comment">(A == B)</span></code></pre>
 <p>this one should be pretty obvious and simple</p>
 <pre><code class="hljs dns"><span class="hljs-keyword">A</span> != b</code></pre>
 <p>the opposite of <code>==</code> would be <code>!=</code></p>
@@ -297,7 +304,7 @@ Process finished with <span class="hljs-keyword">exit</span> code <span class="h
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/20/deploying-a-minecraft-server-with-docker/">
+                      <a href="/2020/11/21/deploying-a-minecraft-server-with-docker/">
                         <span class="hidden-mobile">deploying a minecraft server with docker</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
