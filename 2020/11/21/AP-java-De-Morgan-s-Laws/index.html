@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"icanc.space","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":"G-2YVEHL5QP8","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"icanc.space","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-2YVEHL5QP8","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -242,18 +242,18 @@
 <span class="hljs-section">== becomes !=</span>
 != becomes ==</code></pre></div>
 
-<h5 id="AND-amp-OR-operators"><a href="#AND-amp-OR-operators" class="headerlink" title="AND &amp; OR operators"></a>AND &amp; OR operators</h5><hr>
+<h4 id="AND-amp-OR-operators"><a href="#AND-amp-OR-operators" class="headerlink" title="AND &amp; OR operators"></a>AND &amp; OR operators</h4><hr>
 <p>Here’s an example:</p>
 <div class="hljs"><pre><code class="hljs gcode">!<span class="hljs-comment">(A &amp;&amp; B)</span></code></pre></div>
 <p>According to De Morgan’s law, it’s the same as the following.</p>
 <div class="hljs"><pre><code class="hljs erlang-repl">!A || !B</code></pre></div>
 <p>Remember that you’ll have to change it from OR to AND to make this true</p>
-<h5 id="Bigger-than-amp-smaller-than"><a href="#Bigger-than-amp-smaller-than" class="headerlink" title="Bigger than &amp; smaller than"></a>Bigger than &amp; smaller than</h5><hr>
+<h4 id="Bigger-than-amp-smaller-than"><a href="#Bigger-than-amp-smaller-than" class="headerlink" title="Bigger than &amp; smaller than"></a>Bigger than &amp; smaller than</h4><hr>
 <div class="hljs"><pre><code class="hljs gcode">!<span class="hljs-comment">(A &gt; B)</span></code></pre></div>
 <p>According to De Morgan’s law, it’s the same as the following.</p>
 <div class="hljs"><pre><code class="hljs dns"><span class="hljs-keyword">A</span> &lt;= B</code></pre></div>
 <p>Note that the <code>!</code> operator made the sign inclusive, since <code>&gt;</code> is exclusive.</p>
-<h5 id="Double-equals"><a href="#Double-equals" class="headerlink" title="Double equals"></a>Double equals</h5><hr>
+<h4 id="Double-equals"><a href="#Double-equals" class="headerlink" title="Double equals"></a>Double equals</h4><hr>
 <div class="hljs"><pre><code class="hljs gcode">!<span class="hljs-comment">(A == B)</span></code></pre></div>
 <p>this one should be pretty obvious and simple</p>
 <div class="hljs"><pre><code class="hljs dns"><span class="hljs-keyword">A</span> != b</code></pre></div>
@@ -502,6 +502,28 @@ Process finished with <span class="hljs-keyword">exit</span> code <span class="h
 
 
 
+
+
+  
+
+  
+
+  
+    <!-- Google gtag.js -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YVEHL5QP8"></script>
+    <script defer>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2YVEHL5QP8');
+    </script>
+  
+
+  
+
+  
+
+  
 
 
 
