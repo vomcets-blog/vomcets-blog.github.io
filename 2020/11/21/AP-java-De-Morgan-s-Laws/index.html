@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"icanc.space","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-2YVEHL5QP8","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"icanc.space","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-2YVEHL5QP8","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -184,7 +184,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      309 words
+      314 words
     </span>
   
 
@@ -233,55 +233,36 @@
 <a id="more"></a>
 
 <h1 id="De-Morgan’s-Laws"><a href="#De-Morgan’s-Laws" class="headerlink" title="De Morgan’s Laws"></a>De Morgan’s Laws</h1><h3 id="Distrubuting-the-NOT-operator"><a href="#Distrubuting-the-NOT-operator" class="headerlink" title="Distrubuting the ! (NOT) operator"></a>Distrubuting the <code>!</code> (NOT) operator</h3><p>TL;DR</p>
-<div class="hljs"><pre><code class="hljs asciidoc">&amp;&amp; becomes ||
-|| becomes &amp;&amp;
-&lt; becomes &gt;=
-&gt; becomes &lt;=
-&lt;= becomes &gt;
-&gt;= becomes &lt;
-<span class="hljs-section">== becomes !=</span>
-!= becomes ==</code></pre></div>
+<figure class="highlight asciidoc"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs asciidoc">&amp;&amp; becomes ||<br>|| becomes &amp;&amp;<br>&lt; becomes &gt;=<br>&gt; becomes &lt;=<br>&lt;= becomes &gt;<br>&gt;= becomes &lt;<br><span class="hljs-section">== becomes !=</span><br>!= becomes ==<br></code></pre></div></td></tr></table></figure>
 
 <h4 id="AND-amp-OR-operators"><a href="#AND-amp-OR-operators" class="headerlink" title="AND &amp; OR operators"></a>AND &amp; OR operators</h4><hr>
 <p>Here’s an example:</p>
-<div class="hljs"><pre><code class="hljs gcode">!<span class="hljs-comment">(A &amp;&amp; B)</span></code></pre></div>
+<figure class="highlight gcode"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gcode">!<span class="hljs-comment">(A &amp;&amp; B)</span><br></code></pre></div></td></tr></table></figure>
 <p>According to De Morgan’s law, it’s the same as the following.</p>
-<div class="hljs"><pre><code class="hljs erlang-repl">!A || !B</code></pre></div>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs erlang-repl">!A || !B<br></code></pre></div></td></tr></table></figure>
 <p>Remember that you’ll have to change it from OR to AND to make this true</p>
 <h4 id="Bigger-than-amp-smaller-than"><a href="#Bigger-than-amp-smaller-than" class="headerlink" title="Bigger than &amp; smaller than"></a>Bigger than &amp; smaller than</h4><hr>
-<div class="hljs"><pre><code class="hljs gcode">!<span class="hljs-comment">(A &gt; B)</span></code></pre></div>
+<figure class="highlight gcode"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gcode">!<span class="hljs-comment">(A &gt; B)</span><br></code></pre></div></td></tr></table></figure>
 <p>According to De Morgan’s law, it’s the same as the following.</p>
-<div class="hljs"><pre><code class="hljs dns"><span class="hljs-keyword">A</span> &lt;= B</code></pre></div>
+<figure class="highlight dns"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dns"><span class="hljs-keyword">A</span> &lt;= B<br></code></pre></div></td></tr></table></figure>
 <p>Note that the <code>!</code> operator made the sign inclusive, since <code>&gt;</code> is exclusive.</p>
 <h4 id="Double-equals"><a href="#Double-equals" class="headerlink" title="Double equals"></a>Double equals</h4><hr>
-<div class="hljs"><pre><code class="hljs gcode">!<span class="hljs-comment">(A == B)</span></code></pre></div>
+<figure class="highlight gcode"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gcode">!<span class="hljs-comment">(A == B)</span><br></code></pre></div></td></tr></table></figure>
 <p>this one should be pretty obvious and simple</p>
-<div class="hljs"><pre><code class="hljs dns"><span class="hljs-keyword">A</span> != b</code></pre></div>
+<figure class="highlight dns"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs dns"><span class="hljs-keyword">A</span> != b<br></code></pre></div></td></tr></table></figure>
 <p>the opposite of <code>==</code> would be <code>!=</code></p>
-<h3 id="In-the-context-of-java"><a href="#In-the-context-of-java" class="headerlink" title="In the context of java"></a>In the context of java</h3><div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeMorgan</span></span>
-<span class="hljs-class"></span>&#123;
-   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>
-<span class="hljs-function">   </span>&#123;
-     <span class="hljs-keyword">int</span> x = <span class="hljs-number">6</span>;
-     <span class="hljs-keyword">int</span> y = <span class="hljs-number">9</span>; <span class="hljs-comment">//very nice haha so funny</span>
-     System.out.println(!((x &lt; <span class="hljs-number">9</span>) &amp;&amp; y &gt; <span class="hljs-number">6</span>));
-   &#125;
-&#125;</code></pre></div>
+<h3 id="In-the-context-of-java"><a href="#In-the-context-of-java" class="headerlink" title="In the context of java"></a>In the context of java</h3><figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DeMorgan</span></span><br><span class="hljs-class"></span>&#123;<br>   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span><br><span class="hljs-function">   </span>&#123;<br>     <span class="hljs-keyword">int</span> x = <span class="hljs-number">6</span>;<br>     <span class="hljs-keyword">int</span> y = <span class="hljs-number">9</span>; <span class="hljs-comment">//very nice haha so funny</span><br>     System.out.println(!((x &lt; <span class="hljs-number">9</span>) &amp;&amp; y &gt; <span class="hljs-number">6</span>));<br>   &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <p>Let’s take a look at the logic part</p>
-<div class="hljs"><pre><code class="hljs gcode">!<span class="hljs-comment">((x &lt; 9)</span> &amp;&amp; <span class="hljs-comment">(y &gt; 6)</span>)</code></pre></div>
+<figure class="highlight gcode"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gcode">!<span class="hljs-comment">((x &lt; 9)</span> &amp;&amp; <span class="hljs-comment">(y &gt; 6)</span>)<br></code></pre></div></td></tr></table></figure>
 <p>Using De Morgan’s laws, it would be the same as the following</p>
-<div class="hljs"><pre><code class="hljs erlang-repl">!(x &lt; <span class="hljs-number">9</span>) || !(y &gt; <span class="hljs-number">6</span>)</code></pre></div>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs erlang-repl">!(x &lt; <span class="hljs-number">9</span>) || !(y &gt; <span class="hljs-number">6</span>)<br></code></pre></div></td></tr></table></figure>
 <p>Now, apply the laws on them</p>
-<div class="hljs"><pre><code class="hljs apache"><span class="hljs-attribute">x</span> &gt;= <span class="hljs-number">9</span> || y &lt;= <span class="hljs-number">6</span></code></pre></div>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">x</span> &gt;= <span class="hljs-number">9</span> || y &lt;= <span class="hljs-number">6</span><br></code></pre></div></td></tr></table></figure>
 <p>After that, plug in the values for each variables</p>
-<div class="hljs"><pre><code class="hljs java"><span class="hljs-keyword">int</span> x = <span class="hljs-number">6</span>;
-<span class="hljs-keyword">int</span> y = <span class="hljs-number">9</span>; <span class="hljs-comment">//very nice haha so funny</span>
-System.out.println(x &gt;= <span class="hljs-number">9</span> || y &lt;= <span class="hljs-number">6</span>);</code></pre></div>
+<figure class="highlight java"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java"><span class="hljs-keyword">int</span> x = <span class="hljs-number">6</span>;<br><span class="hljs-keyword">int</span> y = <span class="hljs-number">9</span>; <span class="hljs-comment">//very nice haha so funny</span><br>System.out.println(x &gt;= <span class="hljs-number">9</span> || y &lt;= <span class="hljs-number">6</span>);<br></code></pre></div></td></tr></table></figure>
 <p>Since x is not bigger or equal to 9, or y is smaller or equal to 6, the answer should yield <code>false</code> </p>
 <p>Let’s try running it</p>
-<div class="hljs"><pre><code class="hljs awk">false
-
-Process finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span></code></pre></div>
+<figure class="highlight awk"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs awk">false<br><br>Process finished with <span class="hljs-keyword">exit</span> code <span class="hljs-number">0</span><br></code></pre></div></td></tr></table></figure>
 
 <p>EOF<br>icanc.space</p>
 
@@ -463,6 +444,7 @@ Process finished with <span class="hljs-keyword">exit</span> code <span class="h
 
 
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
 
 
 

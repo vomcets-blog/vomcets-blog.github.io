@@ -55,7 +55,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"icanc.space","root":"/","version":"1.8.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-2YVEHL5QP8","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"icanc.space","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":"G-2YVEHL5QP8","tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
@@ -240,13 +240,13 @@
 <li>fast deployments</li>
 </ol>
 <h3 id="Setting-up-docker"><a href="#Setting-up-docker" class="headerlink" title="Setting up docker"></a>Setting up docker</h3><p>For arch-based distros</p>
-<div class="hljs"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo pacman -S docker</span></code></pre></div>
+<figure class="highlight ebnf"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo pacman -S docker</span><br></code></pre></div></td></tr></table></figure>
 
 <p>For Debian based distros</p>
-<div class="hljs"><pre><code class="hljs cmake">sudo apt <span class="hljs-keyword">install</span> docker</code></pre></div>
+<figure class="highlight cmake"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cmake">sudo apt <span class="hljs-keyword">install</span> docker<br></code></pre></div></td></tr></table></figure>
 
 <h3 id="Installing-Minecraft-docker"><a href="#Installing-Minecraft-docker" class="headerlink" title="Installing Minecraft docker"></a>Installing Minecraft docker</h3><p>tl;dr:<br>Copy the command and connect through port 25565 a few min later</p>
-<div class="hljs"><pre><code class="hljs routeros">sudo docker <span class="hljs-builtin-name">run</span> -d -it -e <span class="hljs-attribute">EULA</span>=<span class="hljs-literal">TRUE</span> -e <span class="hljs-attribute">VERSION</span>=1.16.1 -e <span class="hljs-attribute">TYPE</span>=paper  -p 25565:25565 --name minecraft-server itzg/minecraft-server:multiarch</code></pre></div>
+<figure class="highlight routeros"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs routeros">sudo docker <span class="hljs-builtin-name">run</span> -d -it -e <span class="hljs-attribute">EULA</span>=<span class="hljs-literal">TRUE</span> -e <span class="hljs-attribute">VERSION</span>=1.16.1 -e <span class="hljs-attribute">TYPE</span>=paper  -p 25565:25565 --name minecraft-server itzg/minecraft-server:multiarch<br></code></pre></div></td></tr></table></figure>
 
 <p>Note: ARM-based board like the raspberry pi requires the multi-arch tag. This command will also not mount the volumes, look at the mounting volumes section for help</p>
 <p>Why you SHOULD use docker for this</p>
@@ -261,12 +261,9 @@
 <li>no other reason why you wouldn’t want to use docker.</li>
 </ol>
 <h3 id="How-to-mount-paths-in-docker"><a href="#How-to-mount-paths-in-docker" class="headerlink" title="How to mount paths in docker"></a>How to mount paths in docker</h3><p>If nothing is mounted, docker will create a docker volume and its hard to migrate.</p>
-<div class="hljs"><pre><code class="hljs haskell"><span class="hljs-title">minecraft</span>
-├── config
-├── <span class="hljs-class"><span class="hljs-keyword">data</span></span>
-└── mods</code></pre></div>
+<figure class="highlight haskell"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs haskell"><span class="hljs-title">minecraft</span><br>├── config<br>├── <span class="hljs-class"><span class="hljs-keyword">data</span></span><br>└── mods<br></code></pre></div></td></tr></table></figure>
 <p>This docker image requires 3 mount points without installing external mod packs</p>
-<div class="hljs"><pre><code class="hljs gradle">sudo docker run -d -it -e EULA=<span class="hljs-keyword">TRUE</span> -e VERSION=<span class="hljs-number">1.16</span>.<span class="hljs-number">1</span> -e TYPE=paper -p <span class="hljs-number">25565</span>:<span class="hljs-number">25565</span> -v <span class="hljs-regexp">/home/u</span>sername<span class="hljs-regexp">/minecraft/</span>config:<span class="hljs-regexp">/config -v /</span>home<span class="hljs-regexp">/username/mi</span>necraft<span class="hljs-regexp">/data:/</span>data -v <span class="hljs-regexp">/home/u</span>sername<span class="hljs-regexp">/minecraft/m</span>ods:<span class="hljs-regexp">/mods --name mc-container-name itzg/mi</span>necraft-server:multiarch</code></pre></div>
+<figure class="highlight gradle"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs gradle">sudo docker run -d -it -e EULA=<span class="hljs-keyword">TRUE</span> -e VERSION=<span class="hljs-number">1.16</span>.<span class="hljs-number">1</span> -e TYPE=paper -p <span class="hljs-number">25565</span>:<span class="hljs-number">25565</span> -v <span class="hljs-regexp">/home/u</span>sername<span class="hljs-regexp">/minecraft/</span>config:<span class="hljs-regexp">/config -v /</span>home<span class="hljs-regexp">/username/mi</span>necraft<span class="hljs-regexp">/data:/</span>data -v <span class="hljs-regexp">/home/u</span>sername<span class="hljs-regexp">/minecraft/m</span>ods:<span class="hljs-regexp">/mods --name mc-container-name itzg/mi</span>necraft-server:multiarch<br></code></pre></div></td></tr></table></figure>
 
 <p>Using the <code>-v</code> argument, you can mount the path inside of docker, and u can access the server files outside of docker. but you do need to restart the container every time u make changes.</p>
 <p>not finished</p>
@@ -472,6 +469,7 @@
 
 
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+
 
 
 
