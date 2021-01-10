@@ -11,6 +11,20 @@
     <content type="html"><![CDATA[<blockquote><p>the difference between == and .equals is commonly asked in tests and interviews. heres a brife explanation of the differences between them. </p></blockquote><a id="more"></a><p>A common misunderstanding is that, == compares the value for primitive types and the address for the reference types, but equals only compare the value. But thats not the case with java, as for why its incorrect, just keep reading, and you’ll find your answer.</p><h2 id="What-does-do"><a href="#What-does-do" class="headerlink" title="What does == do?"></a>What does <code>==</code> do?</h2><p><code>==</code> acts differently on different types, heres an example</p><p>On primitive types, <code>==</code> would always work properly</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> nice = <span class="hljs-number">69</span>;<br><span class="hljs-keyword">int</span> veryNice = <span class="hljs-number">69</span>;<br>System.out.println(nice == veryNice); <span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure><p>On reference types, it acts a bit differently, it would compare the address of the object instead of the value, therefore comparing two objects with the same value would return false.</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">String nice = <span class="hljs-string">&quot;NICE&quot;</span>;<br>String veryNice = <span class="hljs-string">&quot;NICE&quot;</span>;<br>System.out.println(nice == veryNice); <span class="hljs-comment">//true</span><br></code></pre></td></tr></table></figure><p><em>Wait what?</em> Shouldn’t it return false since they are both reference types? </p><p>Well, they are indeed reference types, but when you declare the strings without using new, you’ll get a reference to a single <code>String</code> instance. This is because string literals in java will be interned if they are the same, which means that both variables have reference to the same thing.</p><p>Now Let’s try it with the <code>new</code> operator</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">String nice = <span class="hljs-keyword">new</span> String(<span class="hljs-string">&quot;NICE&quot;</span>);<br>String veryNice = <span class="hljs-keyword">new</span> String(<span class="hljs-string">&quot;NICE&quot;</span>);<br>System.out.println(nice == veryNice); <span class="hljs-comment">//false</span><br></code></pre></td></tr></table></figure><p>Ah yes, it’s finally false.</p><p>Now you can see how <code>==</code> returns false, even though they contain the same value, they are still different objects, which have a different reference. So, when <code>==</code> tries to compare them, it would return false because they have different references. </p><p>not finished smh</p>]]></content>
     
     
+    <categories>
+      
+      <category>java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>java</tag>
+      
+      <tag>programming</tag>
+      
+    </tags>
     
   </entry>
   
@@ -43,7 +57,7 @@
   
   
   <entry>
-    <title>deploying a minecraft server with docker</title>
+    <title>Deploying a Minecraft server with docker</title>
     <link href="/2020/11/21/deploying-a-minecraft-server-with-docker/"/>
     <url>/2020/11/21/deploying-a-minecraft-server-with-docker/</url>
     
@@ -51,10 +65,6 @@
     
     
     <categories>
-      
-      <category>minercaft</category>
-      
-      <category>docker</category>
       
       <category>server-stuff</category>
       
